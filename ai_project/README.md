@@ -1,4 +1,4 @@
-# NeML OpsGuardian
+#  OpsGuardian
 
 An autonomous, Agentic AI-driven infrastructure monitoring and incident diagnosis system built in Python. Designed for multi-server enterprise environments running **Angular Frontends**, **Java Spring Boot Microservices**, and **PostgreSQL Databases**.
 
