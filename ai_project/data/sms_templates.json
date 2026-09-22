@@ -1,0 +1,22 @@
+{
+  "7781": {
+    "transcode": "7781",
+    "vendor_id": 4,
+    "message_type": 2,
+    "forward_type": "E",
+    "tc_comment": "Online Advance Payment File Details",
+    "sms_template": "<p>Dear %s ,</p>\n<p>We are pleased to inform you that the Advance Wallet Payment Collection Details for the date %s will be processed on %s.</p>\n<p>Please find the attached Excel file containing the details of Advance Wallet Payment Collection.</p>\n<p>If you require any further information, feel free to contact us.</p>\n<p>Best regards,<br><strong>Rashtriya e Market Services Private Limited</strong>,<br>UMP Support (080) 22864833<br>UMP Support (080) 22864844<br>Email: csg@remsl.in</p>",
+    "reply_to": "sayali.dongre@neml.in",
+    "reply_to_name": "AskUs"
+  },
+  "7782": {
+    "transcode": "7782",
+    "vendor_id": 4,
+    "message_type": 2,
+    "forward_type": "E",
+    "tc_comment": "Daily Wallet Payment Collection Details",
+    "sms_template": "<p>Dear %s ,</p>\n<p>Please find attached the Daily Wallet Payment Collection Details for the date %s to %s.</p>\n<p>If you require any further information or reconciliation details, please reach out to UMP Support.</p>\n<p>Best regards,<br><strong>Rashtriya e Market Services Private Limited (ReMS)</strong><br>Email: ump@remsl.in</p>",
+    "reply_to": "ump@remsl.in",
+    "reply_to_name": "UMP Support"
+  }
+}

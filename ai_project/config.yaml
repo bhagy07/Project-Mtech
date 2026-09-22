@@ -1,0 +1,103 @@
+agent:
+  interval_seconds: 1800  # Half an hour (30 minutes)
+  ai_model: gemini-3.6-flash
+alerts:
+  smtp_host: smtp.gmail.com
+  smtp_port: 465
+  smtp_user: aishwarya.kale@neml.in
+  smtp_pass: qcuw puiw uymz nmej
+  recipient_email: aishwarya.kale@neml.in
+  throttle_minutes: 1
+services:
+- name: NPG_UMP Service
+  type: SPRING_BOOT
+  host: 172.26.6.171
+  ssh_port: 22
+  ssh_user: spotuser
+  ssh_key_path: C:/Users/neml10742/Downloads/AWSLinuxKeyPair.pem
+  app_path: /code/NPG_UMP
+  health_url: http://172.26.6.171:8080/actuator/health
+  archive_path: /code/NPG_UMP/nohup.out
+  log_paths:
+  - /code/NPG_UMP/nohup.out
+  - /logs/NPG/pguatweb/UMP_NPG_SERVICE/
+- name: PaymentGateWayService
+  type: SPRING_BOOT
+  host: 172.26.6.168
+  ssh_port: 22
+  ssh_user: spotuser
+  ssh_key_path: C:/Users/neml10742/Downloads/AWSLinuxKeyPair.pem
+  app_path: /code/Trading/PaymentGateWayService
+  health_url: http://172.26.6.168:8080/actuator/health
+  archive_path: /logs/Trading
+  log_paths:
+  - /code/Trading/PaymentGateWayService/nohup.out
+- name: Fisheries Scheduler Service
+  type: SPRING_BOOT
+  host: 172.80.10.213
+  ssh_port: 22
+  ssh_user: spotuser
+  ssh_key_path: C:/Users/neml10742/Downloads/AWSLinuxKeyPair.pem
+  app_path: '/code/Fishries_License_Management/LICENSE-SCHEDULER-SERVICE '
+  health_url: ''
+  archive_path: '/logs/Fisheries/License_Management_Scheduler_Service '
+  log_paths:
+  - /code/Fishries_License_Management/LICENSE-SCHEDULER-SERVICE
+  - /logs/Fisheries/License_Management_Scheduler_Service
+- name: UMPeMandi
+  type: ANGULARJS_TOMCAT
+  host: 172.26.6.171
+  ssh_port: 22
+  ssh_user: spotuser
+  ssh_key_path: C:/Users/neml10742/Downloads/AWSLinuxKeyPair.pem
+  app_path: /code/umpbidding/UMPeMandi
+  health_url: ''
+  tomcat_service_name: tomcat
+  archive_path: /logs/Trading
+  log_paths:
+  - /code/apache-tomcat-9.0.22/logs
+  - /logs/UMPeMandi/users
+- name: esamridhi-neml-upp-payment-generation-service
+  type: SPRING_BOOT
+  host: 172.80.10.59
+  ssh_port: 22
+  ssh_user: spotuser
+  ssh_key_path: C:/Users/neml10742/Downloads/AWSLinuxKeyPair.pem
+  app_path: ''
+  health_url: ''
+  tomcat_service_name: tomcat
+  archive_path: /logs/Trading
+  log_paths:
+  - /logs/esamridhi-self-registration-services-uat/esamridhi-neml-upp-payment-generation-service
+- name: esamridhi-neml-upp-payment-generation-service
+  type: SPRING_BOOT
+  host: 172.80.10.59
+  ssh_port: 22
+  ssh_user: spotuser
+  ssh_key_path: C:/Users/neml10742/Downloads/AWSLinuxKeyPair.pem
+  app_path: ''
+  health_url: ''
+  tomcat_service_name: esamridhi-neml-upp-payment-generation-service
+  archive_path: /logs/Trading
+  log_paths:
+  - /logs/esamridhi-self-registration-services-uat/esamridhi-neml-upp-payment-generation-service
+databases:
+- name: UMP RDS Cluster
+  host: remsldbold-cluster.cluster-cwetdgelvqwq.ap-south-1.rds.amazonaws.com
+  port: 5432
+  dbname: umpremsl
+  user: uatnemlmandi
+  password: ${UMP_RDS_PASSWORD}
+users:
+- username: devops
+  password: devops@neml123
+  role: DevOps Engineer
+  name: DevOps Team
+- username: developer
+  password: dev@neml123
+  role: Developer
+  name: Developer Team
+- username: admin
+  password: admin@neml123
+  role: Administrator
+  name: System Administrator
